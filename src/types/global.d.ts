@@ -13,6 +13,11 @@ declare global {
         password: string;
     }
 
+    type AlertState = {
+        loading: boolean;
+        alert: string
+    }
+
     type FormErr = {
         firstname?: string;
         lastname?: string;
