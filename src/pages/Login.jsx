@@ -8,12 +8,10 @@ import { Link, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../components/Spinner";
 import { showLoading, hideLoading } from "../redux/alertSlice";
-import { store } from "../redux/store";
+
 
 const Login = () => {
-    const loading = useSelector((state) => state.loading) 
-
-    console.log(loading)
+    const loading = useSelector((state) => state.alert.loading) 
 
     const dispatch = useDispatch()
 
@@ -56,13 +54,13 @@ const Login = () => {
         e.preventDefault();
 
        
-
         try {
-            dispatch(showLoading)
+            dispatch(showLoading())
             const { data, error } = await supabase.auth.signInWithPassword({
                 email: form.email,
                 password: form.password,
             })
+            dispatch(hideLoading()) 
 
             if (error) {
                 setFailed(true)
@@ -82,6 +80,7 @@ const Login = () => {
             }
         }catch(error){
             console.log(error)
+            dispatch(hideLoading())
         }finally{
             dispatch(hideLoading(false))
         }

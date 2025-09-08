@@ -3,5 +3,7 @@ import alertReducer from "./alertSlice"
 
 
 export const store = configureStore({
-    reducer: alertReducer,
-  });
+    reducer: {
+      alert: alertReducer
+    },
+});

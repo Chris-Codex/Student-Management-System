@@ -18,9 +18,11 @@ const ProtectedRoute = ({ children }) => {
 
   if (!session) {
     return <Navigate to="/" replace/>
-  }
+  } 
 
   return children;
 };
 
 export default ProtectedRoute;
+
+
