@@ -8,8 +8,8 @@ export default defineConfig({
    theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
+        sans: ["Inter", "ui-sans-serif", "system-ui"],   // default body
+        poppins: ["Poppins", "sans-serif"], 
       },
     },
   },

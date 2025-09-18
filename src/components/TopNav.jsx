@@ -41,7 +41,7 @@ const TopNav = () => {
                         {open && (
                             <motion.div
                                 key="searchbox"
-                                initial={{ opacity: 10, x: 40 }}
+                                initial={{ opacity: 10, x: 10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: 20 }}
                                 transition={{ duration: 0.98 }}
